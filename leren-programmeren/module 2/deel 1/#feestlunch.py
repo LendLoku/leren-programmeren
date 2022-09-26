@@ -17,4 +17,4 @@ korting_total = aantal_kortingsbonnen * korting / 100
 
 #totale prijs
 totaal= stoktotaal + crtotaal - korting_total
-print({totaal},'euro')
+print(f'De feestlunch kost je bij de bakker {totaal} euro voor de 17 croissantjes en de 2 stokbroden als de 3 kortingsbonnen nog geldig zijn.')
