@@ -24,55 +24,7 @@ acrobatiek = input ('Heeft u praktijkervaring met acrobatiek? (ja/nee) ')
 if acrobatiek == 'ja':
     acrobatiek2 = int (input ('Hoeveel jaar ervaring heeft u met acrobatiek? '))
 
-#Punten tellen 
-punten = 0
-
-if mbo4_diploma == 'ja':
-    punten += 1
-
-if rijbewijs == 'ja':
-    punten += 1
-
-if hoed == 'ja':
-    punten += 1
-
-if geslacht == 'man':
-    if snor > 'ja':
-        punten += 1
-        if snor2 > 9 :
-            punten += 1 
-
-if geslacht == 'vrouw':
-    punten += 1
-    if haar == 'ja':
-        punten += 1
-        if haar2 > 19:
-            punten +=1 
-
-if lengte > 149 or lengte < 220:
-    punten += 1
-
-if gewicht > 89 or gewicht < 120:
-    punten += 1
-
-if certificaat == 'ja':
-    punten += 1
-
-if dieren_dresuur2 > 3:
-    punten += 1
-
-if jongleren2 > 4:
-    punten += 1
-
-if acrobatiek2 > 2:
-    punten += 1
-
-eindresultaat_positief = punten > 9
-eindresultaat_negatief = punten < 9 
-eindresultaat_precies = punten == 9
-if eindresultaat_positief:
-    print ('U bent aan genomen voor de solicitatie gesprek!')
-if eindresultaat_negatief:
-    print ('U bent helaas niet aangenomen voor de solicitatie gesprek.')
-elif eindresultaat_precies:
+if mbo4_diploma == 'ja' and rijbewijs == 'ja' and hoed == 'ja' and (geslacht == 'man' and snor2 > 9) or (geslacht == 'vrouw' and haar2 > 19) and lengte >149 and (gewicht > 90 or gewicht) < 120 and certificaat == 'ja' and dieren_dresuur == 'ja' and dieren_dresuur2 >= 4 and jongleren == 'ja' and jongleren2 >= 5 and acrobatiek == 'ja' and acrobatiek2 >= 3:
     print ('U bent aangenomen voor de solicitatie gesprek!')
+else:
+    print ('U voldoet niet aan de eisen.') 
