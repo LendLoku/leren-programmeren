@@ -39,38 +39,40 @@ if hoed == 'ja':
 if geslacht == 'man':
     if snor > 'ja':
         punten += 1
-        if snor2 > 10 :
+        if snor2 > 9 :
             punten += 1 
 
 if geslacht == 'vrouw':
     punten += 1
     if haar == 'ja':
         punten += 1
-        if haar2 > 20:
+        if haar2 > 19:
             punten +=1 
 
-if lengte > 150 or lengte < 220:
+if lengte > 149 or lengte < 220:
     punten += 1
 
-if gewicht > 90 or gewicht < 120:
+if gewicht > 89 or gewicht < 120:
     punten += 1
 
 if certificaat == 'ja':
     punten += 1
 
-if dieren_dresuur2 > 4:
+if dieren_dresuur2 > 3:
     punten += 1
 
-if jongleren2 > 5:
+if jongleren2 > 4:
     punten += 1
 
-if acrobatiek2 > 3:
+if acrobatiek2 > 2:
     punten += 1
 
 eindresultaat_positief = punten > 9
 eindresultaat_negatief = punten < 9 
-
+eindresultaat_precies = punten == 9
 if eindresultaat_positief:
     print ('U bent aan genomen voor de solicitatie gesprek!')
 if eindresultaat_negatief:
     print ('U bent helaas niet aangenomen voor de solicitatie gesprek.')
+elif eindresultaat_precies:
+    print ('U bent aangenomen voor de solicitatie gesprek!')
