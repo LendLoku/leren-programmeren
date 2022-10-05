@@ -1,4 +1,7 @@
 #De vragen
+naam = input ('Wat is u naam? ')
+if naam == 'Lend':
+    raise NameError ('Lend is niet welkom hier')  
 mbo4_diploma = input ('Bent u bezit van een mbo 4 diploma? (ja/nee) ')
 rijbewijs = input ('Bent u in bezit van een geldig vrachtwagen rijbewijs (ja/nee) ')
 hoed = input ('Bent u in bezit van een hoge hoed (ja/nee) ')

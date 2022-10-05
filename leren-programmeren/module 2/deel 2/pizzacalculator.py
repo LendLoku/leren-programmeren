@@ -1,7 +1,3 @@
-import numbers
-from token import NUMBER
-from tokenize import Number
-
 grootte = input('Kies de grootte: small, medium, large ')
 juisteaantalingevoerd = 'nee'
 while juisteaantalingevoerd == 'nee':
