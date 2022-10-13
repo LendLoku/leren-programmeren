@@ -3,8 +3,7 @@ import random
 name = input('Wat is jouw naam? ')
 print('Hallo', name)
 
-favoriteSeason = input(
-    f'Wat is jouw favorite seizoen {name}? A) Lente, B) Zomer, C) Herfst of D) Winter ')
+favoriteSeason = input(f'Wat is jouw favorite seizoen {name}? A) Lente, B) Zomer, C) Herfst of D) Winter ')
 
 answer = favoriteSeason.lower()
 
@@ -27,7 +26,7 @@ else:
     print("Die ken ik niet...")
 
 favoriteColor = input('En wat is je favoriete kleur? ')
-trueOrFalse = str(random.randint(0, 1))
+trueOrFalse = (random.randint(0, 1))
 
 if trueOrFalse:
     print('Ik vind dat ook een mooie kleur!')

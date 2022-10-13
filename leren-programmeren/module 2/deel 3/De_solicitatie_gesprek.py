@@ -10,10 +10,12 @@ if geslacht == 'man':
     snor = input ('heeft u een snor? (ja/nee) ')
     if snor == 'ja':
        snor2 = int (input ('Hoe lang is uw snor? (IN CM) '))
-if geslacht == 'vrouw':
+elif geslacht == 'vrouw':
     haar = input ('is uw haar lang en rood krullend? (ja/nee) ')
     haar == 'ja'
     haar2 = int (input ('Hoelang is uw haar? (IN CM) '))
+else :
+    raise NameError ('We hebben geen andere smaken hier')
 lengte = int (input ('Hoelang bent u? (IN CM) '))
 gewicht = int (input('Hoe zwaar bent u? (IN KG) '))
 certificaat = input ('Bent u in bezit van een Certificaat “Overleven met gevaarlijk personeel “? (ja/nee) ')
