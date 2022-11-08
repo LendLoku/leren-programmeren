@@ -1,10 +1,11 @@
 print ('Welkom soldaat')
 print ('We hebben jou nodig om de baas van het andere leger uit te schakelen!\n')
+naam_soldaat = input ('Wat is uw naam soldaat?\n')
+print (f'{naam_soldaat} je gaat nu de bunker in van het andere leger.')
 while True:
-    naam_soldaat = input ('Wat is uw naam soldaat?\n')
-    print (f'{naam_soldaat} je gaat nu de bunker in van het andere leger.')
     richting1 = input ('welke kant kies je om verder te gaan aan de linker kant staan 3 soldaten te bewaken en aan de rechterkant staat 1 soldaat (links/rechts)\n')
-    break
+    if richting1 in ['links','rechts']:
+        break
 
 if richting1 == 'links':
     print ('U bent helaas gesneuveld')
@@ -12,15 +13,23 @@ if richting1 == 'links':
     exit ()
 elif richting1 == 'rechts':
     print ('U hebt de soldaat dood gemaakt hij laat ze wapen vallen')
-    wapen = input ('Wil je zijn wapen (ak74) op pakken (ja/nee) \n')
+
+    while True:
+        wapen = input ('Wil je zijn wapen (ak74) op pakken (ja/nee) \n')
+        if wapen in ['ja','nee']:
+            break
     if wapen == 'ja':
         print (f'Goed gedaan {naam_soldaat} nu heb je een wapen om je zelf te beschermen!')
+
     else:
         print ('Jij bent echt dom zo win je nooit')
         exit ()
 
 print ('Je komt nu op een kruising waar je naar links kan, recht en rechtdoor')
-richting2 = input ('Je komt aan de linker kant 2 soldaten tegen, rechts kom je iets tegen wat je nooit hebt gezien en rechtdoor staat er iets op je te wachten (links/rechts/rechtdoor) \n')
+while True:
+    richting2 = input ('Je komt aan de linker kant 2 soldaten tegen, rechts kom je iets tegen wat je nooit hebt gezien en rechtdoor staat er iets op je te wachten (links/rechts/rechtdoor) \n')
+    if richting2 in ['links','rechts', 'rechtdoor']:
+        break
 if richting2 == 'links':
     print ('U bent helaas gesneuveld')
     print (f'{naam_soldaat} u hebt gevochten als een echte soldaat, je zal altijd in ons hart blijven. \n') 
