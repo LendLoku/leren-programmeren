@@ -3,12 +3,12 @@ robotArm = RobotArm('exercise 8')
 # Jouw python instructies zet je vanaf hier:
 robotArm.speed = 2
 robotArm.moveRight()
-for x in range (7):
+for block in range (7):
     robotArm.grab()
-    for y in range (8):
+    for move in range (8):
         robotArm.moveRight()
     robotArm.drop()
-    for q in range (8):
+    for move in range (8):
         robotArm.moveLeft()
 # Na jouw code wachten tot het sluiten van de window:
-robotArm.wait()
+robotArm.wait() 

@@ -7,14 +7,14 @@ for arm in range(9):
     robotArm.grab()
     color = robotArm.scan()
     if color == "red":
-        for arm in range(0,teller):
+        for arm in range(teller):
             robotArm.moveRight()
         robotArm.drop()
-        for arm in range(0,teller):
+        for arm in range(teller-1):
             robotArm.moveLeft()
     else:
         robotArm.drop()
-    robotArm.moveRight()
+        robotArm.moveRight()
     teller -=1
 # Na jouw code wachten tot het sluiten van de window:
 robotArm.wait()

@@ -3,6 +3,7 @@ from RobotArm import RobotArm
 robotArm = RobotArm()
 robotArm.randomLevel(1,7)    
 # Jouw python instructies zet je vanaf hier:
+robotArm.speed = 2
 teller = 9
 move = True
 while move:
@@ -10,8 +11,7 @@ while move:
     kleur = robotArm.scan()
     if kleur == "":
         print('geen blokje')
-        bewegen = False
-        robotArm.wait()
+        move = False        
     else:
         for x in range(0,teller):
             robotArm.moveRight()
