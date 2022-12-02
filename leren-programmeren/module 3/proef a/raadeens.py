@@ -1,59 +1,51 @@
 import random
 
-aantal_pogingen = 10
+AANTALRONDES = 20
+AANTALPOGINGEN = 10
+ronde = 0
 score = 0
 poging = 0
-while True:
-    try:
-        rondes = int( input("Voer in hoeveel rondes u wilt spelen (maximaal 20): "))
-        if rondes <= 20 and rondes > 0:
+while ronde < AANTALRONDES:
+    ronde+=1
+    while True:
+        meeDoen = input("zou je een getal tussen 1 en 1000 willen raden? ja/nee  ").lower()
+        if meeDoen in ['ja','nee']:
             break
         else:
-            print("Boven de 0 en onder de 20!")
-    except:
-        print("voer een geldig nummer in!")
-print ('gok een getal tussen de 1 en 1000!')
-while poging < aantal_pogingen:
-    print(f"Ronde {poging}")
-    geheimgetal = random.randint (0, 1000)
-    aantal_gokken = 1
-    while poging < aantal_pogingen:
+            print('vul ja of nee in')
+
+    if meeDoen == "nee":
+        print("einde")
+        break
+    print(f'dit is ronde: {ronde}')
+    raadGetal = random.randint(1, 1000) 
+
+    poging = 0
+    while poging < AANTALPOGINGEN:
         while True:
             try:
-                gok = int(input(f'Voer hier je gok in (gok {aantal_gokken}): '))
-            except:
-                print ('Voer een geldig nummer in!')
-
-            if gok == geheimgetal:
-                print("goed geraden! Score + 1")
-                score += 1 
-                aantal_gokken += 10
+                antwoord = int(input('raad het getal: '))
                 break
-                
-            if geheimgetal > gok:
-                afstand = geheimgetal - gok
-                print ('Het getal is hoger')
-            elif geheimgetal < gok:
-                afstand = gok - geheimgetal
-                print ('Het getal is lager')
+            except ValueError: 
+                print('Voer een getal in')
 
-            if afstand < 50 and afstand > 20:
-                print ('Je bent warm!')
-            elif afstand < 20:
-                print ('Je bent heel erg warm')
-            aantal_gokken += 1
-        print (f'Het getal was: {geheimgetal}')
-        print (f'Dit was jou score: {score}')
-        if rondes != poging:
-            while True:
-                nog_een_keer = input('Wilt u het spel nog een keer spelen? (ja of nee): ').lower()
-                if nog_een_keer in ('ja', 'nee'):
-                    break
-            
-            if nog_een_keer == 'nee':
-                print (f'Uw eindscore is: {score}')
-                print ('Dankuwel voor het spelen van dit spel')
-                quit()
-            poging += 1
-print(f"Uw eindscore is: {score}")
-print("Dankuwel voor het spelen van dit spel")  
+        if raadGetal == antwoord:
+            print('je hebt het getal goed geraden!')
+            score+=1
+            break
+        else:      
+            verschil = abs(antwoord - raadGetal)
+            if verschil <= 20:
+                print("Je bent heel dichtbij!")
+            elif verschil <= 50 and verschil >= 20:
+                print("Je bent dichtbij!")
+
+            if antwoord > raadGetal:
+                print('gok lager')
+            elif antwoord < raadGetal:
+                print('gok hoger!')
+        poging += 1
+
+    print(f"jou eind score is {score} ")
+
+print(f"Jou eind score is {score} van de {AANTALRONDES} punten!")
