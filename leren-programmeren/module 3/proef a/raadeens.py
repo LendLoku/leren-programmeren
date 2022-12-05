@@ -1,5 +1,6 @@
 import random
-
+DICHTBIJ_HET_GETAL = 50
+HEEL_DICHT_BIJ_GETAL = 20
 AANTALRONDES = 20
 AANTALPOGINGEN = 10
 ronde = 0
@@ -35,9 +36,9 @@ while ronde < AANTALRONDES:
             break
         else:      
             verschil = abs(antwoord - raadGetal)
-            if verschil <= 20:
+            if verschil <= HEEL_DICHT_BIJ_GETAL:
                 print("Je bent heel dichtbij!")
-            elif verschil <= 50 and verschil >= 20:
+            elif verschil <= DICHTBIJ_HET_GETAL and verschil >= HEEL_DICHT_BIJ_GETAL:
                 print("Je bent dichtbij!")
 
             if antwoord > raadGetal:

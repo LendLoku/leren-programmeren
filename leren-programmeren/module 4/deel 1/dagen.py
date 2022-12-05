@@ -1,0 +1,7 @@
+alleDagen = ("Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag", "Zondag")
+print("Alle dagen in de week zijn:", alleDagen)
+print("De werkdagen zijn:", alleDagen[0:5])
+print("De weekenddagen zijn:", alleDagen[5:7])
+print('Alle dagen omgekeerd zijn', alleDagen[::-1])
+print('Alle weekend dagen', alleDagen [6:4:-1])
+print('Alle werk dagen', alleDagen [4::-1])
