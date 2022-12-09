@@ -1,1 +1,3 @@
-  
+boodschappenmand = ''
+
+boodschap = input ('')

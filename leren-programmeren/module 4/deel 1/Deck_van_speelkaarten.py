@@ -13,4 +13,3 @@ random.shuffle(deck)
 
 for inhoudsopgave in range(1, 8):
     print(f"kaart {inhoudsopgave}: ", deck[inhoudsopgave])
-print("Deck (",(deck), "kaarten): ", deck)
