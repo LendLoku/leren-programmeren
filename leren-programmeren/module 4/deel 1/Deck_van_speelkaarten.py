@@ -4,8 +4,8 @@ kleuren = ("harten", "klaveren", "schoppen", "ruiten")
 nummers_en_personages = ("2", "3", "4", "5", "6", "7", "8", "9", "10", "boer", "vrouw", "heer", "aas")
 
 for inhoudsopgave in range(0, 4):
-    for i in range(0, 13):
-        deck.append(kleuren[inhoudsopgave] + " " + nummers_en_personages[i])
+    for nummersenpersonages in range(0, 13):
+        deck.append(kleuren[inhoudsopgave] + " " + nummers_en_personages[nummersenpersonages])
 
 deck.append("joker")
 deck.append("joker")
