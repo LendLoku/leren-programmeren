@@ -1,6 +1,6 @@
 boodschappenlijst = {}
-extra_invoegen_in_het_boodschappenlijstje = "ja"
-while extra_invoegen_in_het_boodschappenlijstje == "ja":
+extra = "ja"
+while extra == "ja":
     product = input("Welke product wil je toevoegen aan uw boodschappenlijst?: ").lower()
     aantal = int(input(f"Hoeveel {product} wil je?: "))
     
@@ -9,7 +9,7 @@ while extra_invoegen_in_het_boodschappenlijstje == "ja":
     
     else:
         boodschappenlijst[product] += aantal
-    extra_invoegen_in_het_boodschappenlijstje = input("Wil je nog een product toevoegen?: ").lower()
+    extra = input("Wil je nog een product toevoegen?: ").lower()
 
 print("BOODSCHAPPENLIJST")
 for aantal, product in boodschappenlijst.items():

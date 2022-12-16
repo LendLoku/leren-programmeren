@@ -6,7 +6,7 @@ getal = 1
 for k in range(hoeveel):
     kleur = random.choice(kleurLijst)
     if kleur not in zak:
-       zak.update({kleur: getal})
+       zak[kleur] = 1
     elif kleur in zak:    
         zak[kleur] += 1        
 print(zak) 
