@@ -25,7 +25,7 @@ fruitmand = [{
     'round' : True
 },{
     'name' : 'kiwi',
-    'weight' : 75,
+    'weight' : 100,
     'color' : 'brown',
     'round' : False
 },{

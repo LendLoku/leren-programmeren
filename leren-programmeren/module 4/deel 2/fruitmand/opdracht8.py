@@ -7,5 +7,5 @@ fruitmand.append({
 })
 totaal_gewicht = 0
 for fruit in fruitmand:
-    totaal_gewicht = totaal_gewicht + fruit["weight"]
+    totaal_gewicht += fruit["weight"]
 print(totaal_gewicht)

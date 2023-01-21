@@ -1,2 +1,3 @@
 from fruitmand import fruitmand
-print (fruitmand[8::-1])
+for index in range (len(fruitmand)-1, -1, -1):
+    print (fruitmand[index]['name'])
