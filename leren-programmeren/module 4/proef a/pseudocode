@@ -1,0 +1,15 @@
+ Maak een lege lijst voor de namen.
+ Maak een lege dictionary voor de geshufflede namen.
+ loop tot de gebruiker klaar is met de namen in te vullen.
+ Input maken voor de naam van de spelers.
+ Checken als de naam bestaat.
+ Als het bestaat print(dit heeft u al gekozen).
+ Als hetniet bestaat voeg de naam toe aan de namen lijst.
+ Checken als er 3 namen zijn gevuld.
+ Vraag als de gebruiker nog meer namen wil toevoegen.
+ Als de gebruiker t niet wilt exit de loop.
+ Shuffel de namen.
+ Loop checken of shuffle anders is dan het origineel.
+ Als het zelfde is herhaal de shuffel.
+ Maak een dictionary met de orginele namen als de keys en shuffel de namen en de values.
+ Print de gehuffelde namen.
