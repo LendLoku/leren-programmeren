@@ -22,4 +22,4 @@ while shuffle:
 for i in range(len(namen)):
     lootjes.update({namen[i]: namen_shuffle[i]})
 
-print(lootjes) 
+print(lootjes)

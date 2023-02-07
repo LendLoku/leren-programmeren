@@ -4,3 +4,4 @@ def multiplier(tafel):
 
 num = input("Van welk getal wilt u de tafel zien? ")
 multiplier(int(num))
+  
