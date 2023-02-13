@@ -1,18 +1,36 @@
-def fibonacci(minimum: int) -> str:
-        nummer1, nummer2 = 0, 1
-        teller = 0
-        volgorde = ""
-        while teller < 100:
-            if nummer1 > minimum:
-                volgorde += (str(nummer1) if volgorde == "" else ", {}".format(nummer1))
-                teller += 1
-            laatste_2_nummers = nummer1 + nummer2
-            nummer1 = nummer2
-            nummer2 = laatste_2_nummers
-        return volgorde
+def fibonacci(n):
+    # deze functie berekent het n-de getal in de Fibonacci-reeks
+    # de eerste twee cijfers zijn 0 en 1
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
 
+def gulden_snede(n1, n2):
+    # deze functie berekent de gulden snede op basis van de laatste twee getallen in de Fibonacci-reeks
+    return n2 / n1
 
-while not (amount := input("Vanaf welk nummer wilt u dat wij printen?")).isdigit():
-        print("Noem een NUMMER op, bedankt.")
+def main():
+# dit is de hoofdfunctie die de fibonacci-getallen en de gulden snede berekent en afdrukt
+# specificeer het aantal te berekenen fibonacci-getallen    
+    num_termen = 10
+    # initialiseer de eerste twee termen
+    eerste_term = 0
+    tweede_term = 1
 
-print (fibonacci(int(amount)))
+    # bereken en print de Fibonacci-getallen
+    for i in range(num_termen):
+        print(eerste_term)
+
+        volgende_term = eerste_term + tweede_term
+        eerste_term = tweede_term
+        tweede_term = volgende_term
+
+    # bereken en print de gulden snede op basis van de laatste twee termen
+    de_gulde_snede = gulden_snede(eerste_term, tweede_term)
+    print("De gulden snede is:", de_gulde_snede)
+
+if __name__ == "__main__":
+    main()

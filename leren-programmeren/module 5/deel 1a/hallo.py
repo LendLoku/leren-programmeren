@@ -1,5 +1,4 @@
-def welcome(function):
-    for x in range(function):
-        print(f'Hello from functiontown {x + 1}!')
-
+def welcome(amount):
+    for x in range (amount):
+        print ('hello')
 welcome(7)

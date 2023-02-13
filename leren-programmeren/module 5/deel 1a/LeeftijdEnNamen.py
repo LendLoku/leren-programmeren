@@ -1,18 +1,18 @@
-def naamENleeftijd():
+def NaamEnLeeftijd():
     namen = []
     leeftijd = []
 
     while True:
-        vraagNaam = input("vul stop in als je klaar bent! Wat is je naam?: ")
-        if vraagNaam == "stop":
+        VraagNaam = input ('vull een naam in. Typ (stop) als je wilt stoppen: ')
+        if VraagNaam == 'stop':
             break
-        vraagLeeftijd = input("Vul stop in als je klaar bent! Wat is je leeftijd?: ")
-        if vraagLeeftijd == "stop":
+        VraagLeeftijd = input ('vull een leeftijd in. Typ (stop) als je wilt stoppen: ')
+        if VraagLeeftijd == 'stop':
             break
-        namen.append(vraagNaam)
-        leeftijd.append(vraagLeeftijd)
-    x = zip(namen , leeftijd)
+        namen.append(VraagNaam)
+        leeftijd.append(VraagLeeftijd)
+    x = zip(namen, leeftijd)
     return x
 
-for naam , leeftijd in naamENleeftijd():
-    print(f"{naam} is {leeftijd} jaar oud ")
+for naam, leeftijd in NaamEnLeeftijd():
+    print (f'{naam} is {leeftijd} jaar oud')
