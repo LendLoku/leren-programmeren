@@ -1,13 +1,3 @@
-def fibonacci(n):
-    # deze functie berekent het n-de getal in de Fibonacci-reeks
-    # de eerste twee cijfers zijn 0 en 1
-    if n <= 0:
-        return 0
-    elif n == 1:
-        return 1
-    else:
-        return fibonacci(n-1) + fibonacci(n-2)
-
 def gulden_snede(n1, n2):
     # deze functie berekent de gulden snede op basis van de laatste twee getallen in de Fibonacci-reeks
     return n2 / n1

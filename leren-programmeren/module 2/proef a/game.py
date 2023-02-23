@@ -47,7 +47,6 @@ if richting2 == 'rechts':
 
 kamer1 = input ('Welke kamer wil je als eerste bekijken, in de linker kamer staan 10 soldaten te bewaken en rechts kan je niet goed zien want het is heel donker. (links/rechts)\n')
 
-
 if kamer1 == 'links':
          print ('Die 10 soldaten hebben je vol door je hoofd heen geschoten ze hoorde je voet stappen.')
          print ('U bent helaas gesneuveld')
