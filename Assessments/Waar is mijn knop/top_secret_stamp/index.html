@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waar is mijn knop?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="myButton">Click</button>
+  <h1 id="myHeading">Hallo lend</h1>
+  
+  <script>
+    const button = document.getElementById("myButton");
+    const heading = document.getElementById("myHeading");
+    
+    button.addEventListener("click", function() {
+      if (heading.style.display === "none") {
+        heading.style.display = "block";
+        button.innerText = "verstop de text";
+      } else {
+        heading.style.display = "none";
+        button.innerText = "laat de text zien";
+      }
+    });
+  </script>
+</body>
+</html>
