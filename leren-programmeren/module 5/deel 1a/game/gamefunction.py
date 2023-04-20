@@ -2,22 +2,37 @@ def naam():
     naam = input('wat is uw naam soldaat: ')
     return naam
 
-def Beindigt_spel():
+def Beindigt_spel(naam):
     print(f'Goed {naam} gevochten strijder.')
     exit()
 
-    
+def vraag_optie(prompt:str, antwoorden:list):
+    while True:
+        antwoord = input (prompt)
+        if antwoord in antwoorden:
+            return antwoord
+
+
+
+
 def vraag_richting1():
-    while True:
-        richting1 = input ('welke kant kies je om verder te gaan aan de linker kant staan 3 soldaten te bewaken en aan de rechterkant staat 1 soldaat (links/rechts)\n')
-        if richting1 in ['links','rechts']:
-            return richting1
-        
+    # while True:
+    #     richting1 = input ('welke kant kies je om verder te gaan aan de linker kant staan 3 soldaten te bewaken en aan de rechterkant staat 1 soldaat (links/rechts)\n')
+    #     if richting1 in ['links','rechts']:
+    #         return richting1
+    return vraag_optie('welke kant kies je om verder te gaan aan de linker kant staan 3 soldaten te bewaken en aan de rechterkant staat 1 soldaat (links/rechts)\n', ['links','rechts'])
+
+
+
+
+
+
+
 def vraag_wapen():
-    while True:
-        wapen = input ('Wil je zijn wapen (ak74) op pakken (ja/nee) \n')
-        if wapen in ['ja','nee']:
-            return wapen
+    # while True:
+    #     wapen = input ('Wil je zijn wapen (ak74) op pakken (ja/nee) \n')
+    #     if wapen in ['ja','nee']:
+            return vraag_optie('Wil je zijn wapen (ak74) op pakken (ja/nee) \n', ['ja','nee'])
 
 def vraag_richting2():
     while True:
