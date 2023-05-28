@@ -33,7 +33,7 @@ def getFileContentAsString(textFile: str) -> str:
 # opdracht 1
 def getNumberOfCharacters(text: str) -> int:
     #geeft terug per letter 1 nummer 
-    return len(text) - text.count(" ") - text.count(",") - text.count(".") - text.count("!")
+    return len(text) - text.count(" ") - text.count(",") - text.count(".") - text.count("!") 
 
 # opdracht 2
 def getNumberOfSentences(text: str) -> int:
@@ -60,7 +60,7 @@ def getNumberOfWords(text: str) -> int:
 def wordsPerSentence (text: str) -> int:
     wordsPerSentence = getNumberOfSentences(text) / getNumberOfWords(text)
     if wordsPerSentence <= 7: 
-        aviscore = 5
+        aviscore = 5 
     elif wordsPerSentence == 8: 
         aviscore = 6
     elif wordsPerSentence == 9: 
@@ -71,4 +71,4 @@ def wordsPerSentence (text: str) -> int:
         aviscore = 11
     elif wordsPerSentence >= 11: 
         aviscore = 12
-    return(aviscore)
+    return(aviscore) 

@@ -28,4 +28,4 @@ if getNumberOfWords(getText('data\easy1.txt')) == 11:
 else:
     print("Deze test is niet geslaagd")
 
-# schrijf zelf nog een extra testen voor getNumberOfWords (gebruik test.txt).
+# schrijf zelf nog een extra testen voor getNumberOfWords (gebruik test.txt). 
