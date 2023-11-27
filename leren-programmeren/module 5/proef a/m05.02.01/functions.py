@@ -46,8 +46,9 @@ def getAdventuringFriends(friends:list) -> list:
         if friends[x]['adventuring'] and friends[x]['shareWith']:
             lst.append(friends[x])
     return lst
-##################### M04.D02.O6 #####################
 
+##################### M04.D02.O6 #####################
+ 
 def getNumberOfHorsesNeeded(people:int) -> int:
     return math.ceil(people / 2)
 
@@ -135,7 +136,7 @@ def print_title(name:str) -> None:
 def print_chapter(number:int, name:str) -> None:
     nextStep(2)
     print_colorvars(vars=['- CHAPTER {}: {} -'.format(number, name)], color='magenta')
-
+    
 def nextStep(secwait:int=1) -> None:
     print('')
     time.sleep(secwait)

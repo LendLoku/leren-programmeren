@@ -14,6 +14,8 @@ Bovendien is het een leuke hobby, die je veel voldoening en plezier kan geven, a
 als je de reacties van je vrienden en familie ziet, als je ze verrast met je eigen creaties.
 """
 
+TEST_TEXT = """Hallo dit is een test. Tweede zin. Derde zin. Vierde zin. Vijfde zin."""
+
 ALLOWED_IN_WORD = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-"
 
 # depending on the type of text you wish you get an easy, difficult or text from file.
@@ -22,6 +24,8 @@ def getText(choice: str) -> str:
         return EASY_TEXT
     elif choice == 'difficult':
         return DIFFICULT_TEXT
+    elif choice == 'test':
+        return TEST_TEXT
     else:
         return getFileContentAsString(choice)
 
@@ -32,43 +36,52 @@ def getFileContentAsString(textFile: str) -> str:
 
 # opdracht 1
 def getNumberOfCharacters(text: str) -> int:
-    #geeft terug per letter 1 nummer 
-    return len(text) - text.count(" ") - text.count(",") - text.count(".") - text.count("!") 
+    aantalCharacters = 0
+
+    for character in text:
+        if character in ALLOWED_IN_WORD:
+            aantalCharacters += 1
+
+    return aantalCharacters
 
 # opdracht 2
 def getNumberOfSentences(text: str) -> int:
-    # Lijst met leestekens die het einde van een zin aangeven
-    end_punctuations = [".", "?", "!"]
+    # Ik doe ze in een lijst
+    lst = [".", "!", "?"]
 
-    # Totaal aantal zinnen
-    num_sentences = 0
+    # Het aantal zinnen
+    zinnen = 0
 
-    # Loop door elk karakter in de tekst
-    for char in text:
-        # Als het karakter een leesteken is dat het einde van een zin aangeeft, voeg dan 1 toe aan het totale aantal zinnen
-        if char in end_punctuations:
-            num_sentences += 1
+    # Hij kijkt elke character in de string
+    for character in text:
+        # Als de character in de lijst zit voert hij de onderste code uit
+        if character in lst:
+            zinnen += 1
 
-    # Geef het totale aantal zinnen terug
-    return num_sentences
+    return zinnen
 
 # opdracht 3
 def getNumberOfWords(text: str) -> int:
     return len(text.split())
 
 # opdracht 5
-def wordsPerSentence (text: str) -> int:
-    wordsPerSentence = getNumberOfSentences(text) / getNumberOfWords(text)
-    if wordsPerSentence <= 7: 
-        aviscore = 5 
-    elif wordsPerSentence == 8: 
-        aviscore = 6
-    elif wordsPerSentence == 9: 
-        aviscore = 7
-    elif wordsPerSentence == 10: 
-        aviscore = 8
-    elif wordsPerSentence == 11:
-        aviscore = 11
-    elif wordsPerSentence >= 11: 
-        aviscore = 12
-    return(aviscore) 
+def getAVIScore(text: str) -> int:
+    woorden = getNumberOfWords(text)
+    zinnen = getNumberOfSentences(text)
+
+    score = zinnen / woorden
+
+    if score <= 7:
+        AVISCORE = 5
+    elif score > 7 and score <= 8:
+        AVISCORE = 6
+    elif score > 8 and score <= 9:
+        AVISCORE = 7
+    elif score > 9 and score <= 10:
+        AVISCORE = 8
+    elif score > 10 and score <= 11:
+        AVISCORE = 11
+    elif score > 11:
+        AVISCORE = 12
+    
+    return AVISCORE

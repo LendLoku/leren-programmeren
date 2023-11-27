@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protein Search</title>
+</head>
+<body>
+    <h1>Food Search</h1>
+    <label for="searchInput">Search for Foods with the Most minerals or vitamins per 100g: </label>
+    <input type="text" id="searchInput" placeholder="Enter search term">
+    <button onclick="searchProtein()">Search</button>
+
+    <h2>Top 20 Foods with the Most ... (per 100g)</h2>
+    <ul id="resultsList"></ul>
+
+    <script>
+        const proteinData = [
+            { food: 'Beef jerky', amount: '30-40g' },
+            { food: 'Parmesan', amount: '32g' },
+            { food: 'Tuna steak', amount: '32g' },
+            { food: 'Pumpkin seeds', amount: '30g' },
+            { food: 'Turkey', amount: '30g' },
+            { food: 'Peanuts', amount: '25-28g' },
+            { food: 'Edam', amount: '27g' },
+            { food: 'Canned tuna', amount: '25g' },
+            { food: 'Cheddar', amount: '25g' },
+            { food: 'Seitan', amount: '25g' },
+            { food: 'Beef', amount: '20-24g' },
+            { food: 'Chicken', amount: '24g' },
+            { food: 'Salmon', amount: '24g' },
+            { food: 'Stilton', amount: '24g' },
+            { food: 'Almonds', amount: '21g' },
+            { food: 'Sardines', amount: '21g' },
+            { food: 'Cod', amount: '20g' },
+            { food: 'Lamb', amount: '20g' },
+            { food: 'Mackerel', amount: '20g' },
+            { food: 'Pistachios', amount: '20g' }
+        ];
+
+        function searchProtein() {
+            const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+            const resultsList = document.getElementById('resultsList');
+            resultsList.innerHTML = '';
+
+            // Filter and sort the data based on the amount of protein
+            const filteredData = proteinData.filter(item => item.food.toLowerCase().includes(searchQuery));
+            filteredData.sort((a, b) => {
+                const [aMin, aMax] = a.amount.includes('-') ? a.amount.split('-').map(Number) : [parseFloat(a.amount), parseFloat(a.amount)];
+                const [bMin, bMax] = b.amount.includes('-') ? b.amount.split('-').map(Number) : [parseFloat(b.amount), parseFloat(b.amount)];
+                return bMax - aMax;
+            });
+
+            // Display the top 20 matching foods
+            for (let i = 0; i < Math.min(20, filteredData.length); i++) {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${filteredData[i].food}: ${filteredData[i].amount} g`;
+                resultsList.appendChild(listItem);
+            }
+        }
+    </script>
+</body>
+</html>

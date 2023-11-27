@@ -1,0 +1,119 @@
+    # Add wild cards
+    for wild in wilds:
+        for _ in range(4):
+            deck.append(wild)
+
+    random.shuffle(deck)
+    return deck
+
+# Function to deal initial hands to players
+def deal_cards(deck, num_players):
+    hands = [[] for _ in range(num_players)]
+
+    for _ in range(7):
+        for i in range(num_players):
+            hands[i].append(deck.pop(0))
+
+    return hands
+
+# Function to check if a card is valid to play
+def is_valid(card, top_card):
+    card_color, card_value = card.split()
+    top_card_color, top_card_value = top_card.split()
+
+    if card_color == top_card_color or card_value == top_card_value or "Wild" in card:
+        return True
+
+    return False
+
+# Function to display the current player's hand
+def display_hand(hand):
+    print("Your hand:")
+    for i, card in enumerate(hand, start=1):
+        print(f"{i}. {card}")
+
+# Function to display the current top card
+def display_top_card(top_card):
+    print("Top card:", top_card)
+
+# Function to simulate a player's turn
+def play_turn(hand, top_card, deck):
+    while True:
+        display_top_card(top_card)
+        display_hand(hand)
+
+        print("Enter the number of the card you want to play (or 0 to draw a card):")
+        choice = int(input())
+
+        if choice == 0:
+            if len(deck) > 0:
+                drawn_card = deck.pop(0)
+                hand.append(drawn_card)
+                print("You drew:", drawn_card)
+            else:
+                print("There are no more cards in the deck!")
+            return False
+
+        if choice < 1 or choice > len(hand):
+            print("Invalid choice. Try again.")
+            continue
+
+        card = hand[choice - 1]
+
+        if is_valid(card, top_card):
+            hand.remove(card)
+            return card
+        else:
+            print("Invalid card. Try again.")
+
+# Function to simulate the game
+def play_game(num_players):
+    deck = initialize_deck()
+    hands = deal_cards(deck, num_players)
+    top_card = deck.pop(0)
+
+    current_player = 0
+    game_active = True
+
+    while game_active:
+        print("\nPlayer", current_player + 1, "it's your turn.")
+
+        card_played = play_turn(hands[current_player], top_card, deck)
+
+        if not card_played:
+            current_player = (current_player + 1) % num_players
+            continue
+
+        top_card = card_played
+        print("Player", current_player + 1, "played", card_played)
+
+        if len(hands[current_player]) == 0:
+            game_active = False
+            print("Player", current_player + 1, "wins!")
+
+        if "Draw Two" in card_played:
+            next_player = (current_player + 1) % num_players
+            hands[next_player].extend(deck[:2])
+            del deck[:2]
+
+        if "Reverse" in card_played:
+            num_players = len(hands)
+            if num_players == 2:
+                current_player = (current_player + 1) % num_players
+            else:
+                current_player = (current_player - 1) % num_players
+
+        if "Skip" in card_played:
+            current_player = (current_player + 1) % num_players
+
+        if "Wild Draw Four" in card_played:
+            next_player = (current_player + 1) % num_players
+            hands[next_player].extend(deck[:4])
+            del deck[:4]
+
+        current_player = (current_player + 1) % num_players
+
+# Main code
+print("Welcome to UNO!")
+num_players = int(input("Enter the number of players: "))
+play_game(num_players)

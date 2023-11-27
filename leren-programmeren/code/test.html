@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Nutrient Search</title>
+</head>
+<body>
+    <h1>Food Nutrient Search</h1>
+    <label for="foodSearch">Search for a Food: </label>
+    <input type="text" id="foodSearch" placeholder="Enter a food...">
+    <button onclick="searchFood()">Search</button>
+    <div id="result">
+        <!-- Nutrient information will be displayed here -->
+    </div>
+
+    <script>
+        // Sample nutrient data for kiwi (per 100 grams)
+        const kiwiNutrients = {
+            vitaminC: 92.7, // mg
+            vitaminK: 40.3, // mcg
+            vitaminE: 1.46, // mg
+            folate: 25,     // mcg
+            potassium: 312, // mg
+            copper: 0.13,  // mg
+            magnesium: 17,  // mg
+            phosphorus: 34, // mg
+            calcium: 34     // mg
+        };
+
+        function searchFood() {
+            const foodName = document.getElementById("foodSearch").value.toLowerCase();
+            const resultContainer = document.getElementById("result");
+
+            // Check if the entered food is "kiwi" (for this simplified example)
+            if (foodName === "kiwi") {
+                resultContainer.innerHTML = "<h2>Kiwi Nutrient Content (per 100 grams):</h2>";
+                resultContainer.innerHTML += `<p>Vitamin C: ${kiwiNutrients.vitaminC} mg</p>`;
+                resultContainer.innerHTML += `<p>Vitamin K: ${kiwiNutrients.vitaminK} mcg</p>`;
+                resultContainer.innerHTML += `<p>Vitamin E: ${kiwiNutrients.vitaminE} mg</p>`;
+                resultContainer.innerHTML += `<p>Folate: ${kiwiNutrients.folate} mcg</p>`;
+                resultContainer.innerHTML += `<p>Potassium: ${kiwiNutrients.potassium} mg</p>`;
+                resultContainer.innerHTML += `<p>Copper: ${kiwiNutrients.copper} mg</p>`;
+                resultContainer.innerHTML += `<p>Magnesium: ${kiwiNutrients.magnesium} mg</p>`;
+                resultContainer.innerHTML += `<p>Phosphorus: ${kiwiNutrients.phosphorus} mg</p>`;
+                resultContainer.innerHTML += `<p>Calcium: ${kiwiNutrients.calcium} mg</p>`;
+            } else {
+                resultContainer.innerHTML = "<p>Food not found or nutrient data unavailable.</p>";
+            }
+        }
+    </script>
+</body>
+</html>

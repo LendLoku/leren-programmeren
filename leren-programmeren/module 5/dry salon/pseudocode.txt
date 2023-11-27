@@ -1,0 +1,32 @@
+vraagBolletjes = waar
+keuzeBoolean = waar
+nogEen = waar
+
+zolang nogEen waar is
+    zolang vraagBolletjes waar is
+        aantal = voer in "Hoeveel bolletjes wilt u?"
+
+        als aantal tussen 1 en 3 is
+            zolang keuzeBoolean waar is
+            keuze = voer in "Wilt u deze {aantal} bolletje(s) in een hoorntje of een bakje"
+                als keuze hoorntje of bakje is
+                    keuzeBoolean = niet waar
+                    vraagBolletjes = niet waar
+                anders
+                    print "Sorry die ken ik niet..."
+        of als aantal tussen 4 en 8 is
+            print "dan krijgt u van mij een bakje met {aantal} bolletjes"
+        of als aantal hoger is dan 
+            print "Sorry, zulke grote bakken hebben we niet"
+        anders
+            print "Sorry dat snap ik niet..."
+
+    print "Hier is uw {keuze} met {aantalBolletjes} bolletjes"
+    meer = voer in "Wilt u nog meer bestellen?"
+    als meer 'j' is
+        vraagBolletjes = waar
+    of als meer 'n' is 
+        print "Bedankt en tot ziens!"
+        nogEen = niet waar
+    anders
+        print "Sorry dat snap ik niet" 

@@ -81,7 +81,7 @@ friends = [{
     }
 }]
 
-adventurerGear = [{
+adventurerGear = adventurerGear = [{
     'name' : 'Lantaren',
     'amount' : 1,
     'unit' : 'x',

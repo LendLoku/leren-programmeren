@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minerals & Vitamins</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Search bar styles */
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Minerals & Vitamins</h1>
+    </header>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="foodSearch" placeholder="Search...">
+            <input type="submit" value="Search" onclick="searchFoods()">
+        </div>
+        <!-- List of 50 foods rich in minerals and vitamins -->
+        <h2>Search Results:</h2>
+        <ul id="searchResults"></ul>
+    </div>
+
+    <script>
+        // Define a list of foods
+        const foods = [
+            "Spinach",
+            "Kale",
+            "Broccoli",
+            "Sweet Potato",
+            "Carrots",
+            "Pumpkin",
+            // Add the remaining foods here
+        ];
+
+        // Sample nutrient data for kiwi (per 100 grams)
+        const kiwiNutrients = {
+            vitaminC: 92.7, // mg
+            vitaminK: 40.3, // mcg
+            vitaminE: 1.46, // mg
+            folate: 25,     // mcg
+            potassium: 312, // mg
+            copper: 0.13,  // mg
+            magnesium: 17,  // mg
+            phosphorus: 34, // mg
+            calcium: 34     // mg
+        };
+
+        // Function to perform the search
+        function searchFoods() {
+            const searchTerm = document.getElementById("foodSearch").value.toLowerCase();
+            const resultsContainer = document.getElementById("searchResults");
+            resultsContainer.innerHTML = ""; // Clear previous results
+
+            // Filter foods that match the search term
+            const matchingFoods = foods.filter(food => food.toLowerCase().includes(searchTerm));
+
+            // Display matching foods
+            matchingFoods.forEach(food => {
+                const listItem = document.createElement("li");
+                listItem.textContent = food;
+                resultsContainer.appendChild(listItem);
+
+                // For the example, display kiwi nutrient data when "kiwi" is searched
+                if (food.toLowerCase() === "kiwi") {
+                    listItem.addEventListener("click", function() {
+                        showNutrientData(kiwiNutrients);
+                    });
+                }
+            });
+
+            if (matchingFoods.length === 0) {
+                const noResultsItem = document.createElement("li");
+                noResultsItem.textContent = "No matching foods found.";
+                resultsContainer.appendChild(noResultsItem);
+            }
+        }
+
+        // Function to display nutrient data
+        function showNutrientData(nutrients) {
+            const resultContainer = document.getElementById("searchResults");
+            resultContainer.innerHTML = "<h2>Nutrient Content per 100 grams:</h2>";
+            for (const nutrient in nutrients) {
+                resultContainer.innerHTML += `<p>${nutrient}: ${nutrients[nutrient]}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
