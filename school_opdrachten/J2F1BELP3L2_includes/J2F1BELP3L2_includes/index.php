@@ -1,21 +1,52 @@
-<!doctype html>
+<?php
+include("../includes/db.php");
+include("../includes/header.php");
 
-<html lang="en">
+if (isset($_GET['onderwerp'])) {
+    $selectedOnderwerp = $_GET['onderwerp'];
+    $safeSelectedOnderwerp = $conn->real_escape_string($selectedOnderwerp);
+    $onderwerpDetails = getOnderwerpDetails($safeSelectedOnderwerp);
+
+    if (!empty($onderwerpDetails)) {
+        $pageTitle = "Onderwerp: " . $onderwerpDetails['name'];
+?>
+<!DOCTYPE html>
+<html lang="nl">
 <head>
-  <meta charset="utf-8">
-  <title>Lab 2 - Includes en require</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title><?php echo $pageTitle; ?></title>
 </head>
 <body>
+    <header>
+        <img src="images/client_server.jpg" alt="Client Server">
+        <nav>
+            <ul>
+                <li><a href="index.php?onderwerp=onderwerp1">Onderwerp 1</a></li>
+                <li><a href="index.php?onderwerp=onderwerp2">Onderwerp 2</a></li>
+                <li><a href="index.php?onderwerp=onderwerp3">Onderwerp 3</a></li>
+            </ul>
+        </nav>
+    </header>
 
-	<!-- laad hier via php je header in (vanuit je includes map) -->
+    <div id="content">
+        <article>
+            <h2><?php echo $onderwerpDetails['name']; ?></h2>
+            <img src="images/<?php echo $onderwerpDetails['image']; ?>" alt="<?php echo $onderwerpDetails['name']; ?>">
+            <p><?php echo $onderwerpDetails['description']; ?></p>
+        </article>
+    </div>
 
+    <?php
+        } else {
+            echo "<p>Onderwerp niet gevonden.</p>";
+        }
+    } else {
+        echo "<p>Selecteer een onderwerp uit het menu.</p>";
+    }
 
-	<!-- laad hier via php de juiste contentpagina in (vanuit de pages map) in. Welke geselecteerd moet worden kun je uit de URL halen (URL_Params).-->
-
-	
-	<!-- laad hier via php je footer in (vanuit je includes map)-->
-
-
+    include("includes/footer.php");
+    ?>
 </body>
 </html>
