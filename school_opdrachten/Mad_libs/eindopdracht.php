@@ -85,7 +85,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include($currentPage . '.php');
 }
 ?>
-
 <footer>
     &copy; <?php echo date("Y"); ?> Lend Loku
 </footer>

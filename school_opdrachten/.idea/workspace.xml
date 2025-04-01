@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f560ef7-3aee-4e7b-90a8-c214b7d77611" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Eigen_code/PHP_Leren/leren.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mad_libs/eindopdracht.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mad_libs/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mad_libs/orkunde.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mad_libs/paniek.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zelf_leren/leren.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/leren-programmeren.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/leren-programmeren.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/J2F1BELP3L2_includes/J2F1BELP3L2_includes/includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/J2F1BELP3L2_includes/J2F1BELP3L2_includes/includes/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/horeca.js" beforeDir="false" afterPath="$PROJECT_DIR$/opdrachten/horeca.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/piramide.js" beforeDir="false" afterPath="$PROJECT_DIR$/opdrachten/piramide.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/piramide_aflopend.js" beforeDir="false" afterPath="$PROJECT_DIR$/opdrachten/piramide_aflopend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/opdrachten/test.js" afterDir="false" />
-    </list>
+    <list default="true" id="4f560ef7-3aee-4e7b-90a8-c214b7d77611" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +16,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "LendLoku"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/LendLoku/leren-programmeren.git",
+    "accountId": "3e8b530b-b715-4ad8-80db-a63b6e943f72"
+  }
+}]]></component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -79,6 +76,7 @@
       <workItem from="1741698939303" duration="602000" />
       <workItem from="1742996362965" duration="1461000" />
       <workItem from="1743086251617" duration="99000" />
+      <workItem from="1743408808599" duration="3000" />
     </task>
     <servers />
   </component>
